@@ -1,0 +1,13 @@
+@use '../abstracts/abstracts' as abs;
+.container {
+    max-width: 1200px;
+    margin: auto;
+
+    padding-left: abs.$padding-p;
+    padding-right: abs.$padding-p;
+
+    @include abs.breakpoint(tablet) {
+        padding-left: abs.$padding-m;
+        padding-right: abs.$padding-m;
+    }
+}

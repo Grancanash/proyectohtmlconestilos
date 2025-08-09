@@ -1,0 +1,137 @@
+@use '../abstracts/abstracts' as abs;
+.quienessomos-hero {
+
+    .container {
+        background-color: white;
+    }
+    
+    &__presentacion {
+        height: 350px;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+
+        @include abs.padding_adaptable;
+
+        &_quienes-somos {
+            background: url('../../img/quienes-somos/quienes_somos.jpg');
+            background-repeat: no-repeat;
+        }
+
+        &_title {
+            display: none;
+        }
+    }
+
+    &__info {
+        text-align: center;
+        padding-bottom: 50px;
+
+        &_description {
+            margin-top: 20px;
+        }
+
+        &_button {
+            margin-top: 20px;
+        }
+    }
+
+    @include abs.breakpoint(tablet) {
+        &__presentacion {
+            &_quienes-somos {
+                background-size: cover;
+            }
+        }
+    }
+
+    @include abs.breakpoint(desktop) {
+        padding-top: abs.$header-w;
+
+        &__presentacion {
+            &_quienes-somos {
+                background-position: 0 -100px;
+            }
+        }
+    }
+}
+
+.teachers {
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        padding-bottom: 60px;
+        background-color: white;
+    }
+
+    article {
+        position: relative;
+        border: solid gray 1px;
+        padding: 20px;
+        border-radius: 10px;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 10px 20px;
+    }
+
+    &__block1 {
+        grid-column: 2;
+        grid-row: 1;
+        align-self: center;
+    }
+
+    &__title {
+        font-size: 30px;
+    }
+
+    &__position {
+        font-size: 20px;
+    }
+
+    &__image {
+        grid-column: 1;
+        grid-row: 1;
+        display: block;
+
+        img {
+            display: block;
+            box-shadow: abs.$shadow-1;
+            margin: 20px 0;
+        }
+    }
+
+    &__description {
+        grid-column: 1 / 3;
+        grid-row: 2;
+        margin-bottom: 30px;
+    }
+
+    .button-up {
+        grid-column: 1 / 3;
+        grid-row: 3;
+        right: 10px;
+    }
+
+    @include abs.breakpoint(tablet) {
+        &__block2 {
+            display: flex;
+            align-items: end;
+            column-gap: 20px;
+        }
+    }
+
+    @include abs.breakpoint(desktop) {
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        article {
+            width: calc(50% - 10px);
+        }
+    }
+}

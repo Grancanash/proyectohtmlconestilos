@@ -1,0 +1,85 @@
+@use '../abstracts/abstracts' as abs;
+
+.login {
+    height: calc(100vh - abs.$header-w - abs.$footer-h);
+
+    .container {
+        background-color: white;
+        height: 100%;
+    }
+    
+    &__title {
+        text-align: center;
+    }
+
+    &__form {
+        display: flex;
+        align-items: center;
+        height: calc(100% - 200px);
+
+        form  {
+            margin: 0 auto;
+
+            label {
+                display: none;
+                color: abs.$placeholder;
+                text-transform: uppercase;
+                font-size: 10px;
+            }
+
+            input:not([type=submit]) {
+                width: 100%;
+                padding: 4px 10px;
+                margin-bottom: 20px;
+                border: none;
+                border-bottom: solid 1px abs.$gris;
+                font-size: 14px;
+
+                &::placeholder {
+                    color: abs.$placeholder;
+                    text-transform: uppercase;
+                    font-size: 12px;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            label:has(+ input:not(:placeholder-shown)),
+            label:has(+ textarea:not(:placeholder-shown)) {
+                display: block;
+            }
+
+            input:user-invalid {
+                border: solid 1px red;
+                background-color: #ffeaea;
+            }
+        }
+
+    }
+
+    &__buttons {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    @include abs.breakpoint(tablet) {
+        height: calc(100vh - abs.$header-w - abs.$footer-h);
+
+        &__form {
+            height: calc(100% - 124px);
+            form {
+                padding: 30px 60px;
+                border-radius: 10px;
+                box-shadow: abs.$shadow-3;
+            }
+        }
+    }
+
+    @include abs.breakpoint(desktop) {
+        height: calc(100vh - abs.$footer-h);
+        padding-top: abs.$header-w;
+    }
+
+}

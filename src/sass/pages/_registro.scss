@@ -1,0 +1,184 @@
+@use '../abstracts/abstracts' as abs;
+
+.registro {
+
+    .container {
+        background-color: white;
+        padding-bottom: 30px;
+    }
+
+    &__hero {
+        height: 200px;
+        background-image: url('../../img/registro/contacto_mobile.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 20px;
+        @include abs.padding_adaptable;
+    }
+    
+    &__title {
+        text-align: center;
+    }
+
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        fieldset {
+            padding: 20px 10px;
+            border: solid 1px rgba(#3434B5, .2);
+
+            legend {
+                color: rgba(#3434B5, .5);
+                font-size: 12px;
+            }
+
+            label {
+                display: none;
+                color: abs.$placeholder;
+                text-transform: uppercase;
+                font-size: 10px;
+            }
+
+            input, textarea {
+                width: 100%;
+                padding: 4px 10px;
+                margin-bottom: 20px;
+                border: none;
+                border-bottom: solid 1px abs.$gris;
+                font-size: 14px;
+
+                &::placeholder {
+                    color: abs.$placeholder;
+                    text-transform: uppercase;
+                    font-size: 12px;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            label:has(+ input:not(:placeholder-shown)),
+            label:has(+ textarea:not(:placeholder-shown)) {
+                display: block;
+            }
+
+            input[type=file]{
+                color: abs.$placeholder;
+
+                &::file-selector-button {
+                    @include abs.button;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    color: color-mix(in srgb, currentColor 100%, transparent);;
+                    border-color: color-mix(in srgb, currentColor 100%, transparent);;
+                }
+            }
+
+            input:user-invalid {
+                border: solid 1px red;
+                background-color: #ffeaea;
+            }
+
+        }
+
+        fieldset:first-of-type,
+        fieldset:last-of-type {
+            border: none;
+        }
+
+        fieldset:last-of-type {
+            input, textarea {
+                width: auto;
+                @include abs.button;
+            }
+        }
+
+        .registro__form_date,
+        .registro__form_file {
+            display: flex;
+            align-items: end;
+            margin-bottom: 20px;
+
+            label {
+                display: block;
+                color: abs.$placeholder;
+                font-size: 12px;
+                width: auto;
+                padding-bottom: 5px;
+            }    
+
+            input {
+                flex: 1;
+                margin: 0;
+                color: abs.$placeholder;
+            }
+        }
+
+    }
+
+    &__buttons {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    @include abs.breakpoint(tablet) {
+        &__hero {
+            height: 300px;
+        }
+    }
+
+    @include abs.breakpoint(desktop) {
+        padding-top: abs.$header-w;
+
+        &__form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto auto;
+            padding: 20px 0;
+            column-gap: 20px;
+
+            fieldset:nth-child(1) {
+                grid-column: 2;
+                grid-row: 1 / span 2;
+                margin: 0;
+                padding: 0;
+                height: auto;
+                margin-top: 9px;
+                img {
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+
+            fieldset:nth-child(2) {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            fieldset:nth-child(3) {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            fieldset:nth-child(4) {
+                grid-column: 1 / span 2;
+                grid-row: 3;
+            }
+
+            fieldset:nth-child(5) {
+                grid-column: 1 / span 2;
+                grid-row: 4;
+            }
+        }
+
+        &__buttons {
+            margin-top: 0;
+            margin-left: auto;
+        }
+    }
+}

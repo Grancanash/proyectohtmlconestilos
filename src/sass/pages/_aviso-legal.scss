@@ -1,0 +1,26 @@
+@use '../abstracts/abstracts' as abs;
+
+.legal {
+
+    .container {
+        background-color: white;
+        padding-bottom: 20px;
+    }
+
+    p {
+        padding: 5px 0;
+
+        span {
+            font-weight: bold;
+            color: abs.$azul;
+        }
+    }
+
+    &__description {
+        margin: 20px 0;
+    }
+
+    @include abs.breakpoint(desktop) {
+        padding-top: abs.$header-w;
+    }
+}

@@ -1,0 +1,343 @@
+@use '../abstracts/abstracts' as abs;
+
+.home-hero {
+
+    .container {
+        background-color: white;
+    }
+
+    &__presentacion {
+        height: 300px;
+        @include abs.padding_adaptable;
+        
+        &_home {
+            background: url('../../img/home/fondo_web1_mobile.jpg');
+            background-repeat: no-repeat;
+            background-position: left;
+            background-size: cover;
+        }
+    }
+
+    &__info {
+        text-align: center;
+        padding: 30px 0 50px;
+
+        &_title {
+            display: none;
+        }
+
+        &_quienessomos {
+            &_description {
+                margin-top: 20px;
+            }
+
+            &_button {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    @include abs.breakpoint(tablet) {
+
+        &__presentacion {
+            &_home {
+                background: url('../../img/home/fondo_web1_desktop.jpg');
+                background-position: 0 -20px;
+                background-size: cover;
+            }
+        }
+
+        &__info {
+            display: flex;
+            column-gap: 30px;
+
+            &_title {
+                display: block;
+                text-align: right;
+            }
+
+            &_quienessomos {
+                text-align: left;
+            }
+        }
+    }
+    
+    @include abs.breakpoint(desktop) {
+        padding-top: abs.$header-w;
+    }
+    
+}
+
+.home-courses {
+    .container {
+        background-color: white;
+    }
+
+    &__article {
+        position: relative;
+        padding-bottom: 40px;
+
+        &_image1, 
+        &_image2 {
+            height: 200px;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            box-shadow: inset 0px 0px 20px -10px rgba(0,0,0,1);
+
+            @include abs.padding_adaptable;
+        }
+
+        &_image1 {
+            background-image: url('../../img/cursos/fullstack_mobile.jpg');
+        }
+
+        &_image2 {
+            background-image: url('../../img/cursos/blockchain_mobile.jpg');
+        }
+
+        &_description {
+            margin-top: 20px;
+        }
+
+        &_button {
+            margin-top: 20px;
+        }
+    }
+
+    @include abs.breakpoint(tablet) {
+        &__article {
+
+            &_image1 {
+                background-image: url('../../img/cursos/fullstack.jpg');
+            }
+
+            &_image2 {
+                background-image: url('../../img/cursos/blockchain.jpg');
+            }
+
+            &_image1,
+            &_image2 {
+                height: auto;
+                background-attachment: scroll;
+                background-repeat: no-repeat;
+                box-shadow: none;
+                aspect-ratio: 16/9 ;
+            }
+
+            &_content,
+            &_content_rev {
+                padding: 40px;
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: stretch;
+                column-gap: 40px;
+
+                & > div {
+                    flex: 1;
+                    margin: 0;
+                }
+            }
+
+            &_content_rev {
+                flex-direction: row-reverse;
+                
+                div[class*="info"],
+                div[class*="description"] {
+                    text-align: end;
+                }
+            }
+            
+        }
+    }
+
+    @include abs.breakpoint(desktop) {
+        &__articles {
+            display: flex;
+            gap: 20px;
+        }
+
+        &__article {
+            flex: 1;
+            border-radius: 10px;
+            margin: 20px 0;
+            padding-bottom: 0;
+            box-shadow: abs.$shadow-3;
+
+            &_title {
+                margin: 0;
+                border-radius: 10px 10px 0 0;
+            }
+
+            &_content,
+            &_content_rev {
+                flex-direction: column;
+                margin-top: 0px;
+                padding: 20px;
+
+                div {
+                    flex: none;
+                }
+            }
+
+            &_content {
+                .button-up {
+                    display: none;
+                }
+            }
+
+            &_content_rev {
+                div[class*="info"],
+                div[class*="description"] {
+                    text-align: start;
+                }
+                
+                .button-up {
+                    right: 10px;
+                }
+            }
+
+            &_image1,
+            &_image2 {
+                display: block;
+                height: 300px!important;
+            }
+        }
+    }
+}
+
+.news {
+    .container {
+        background-color: white;
+    }
+    
+    &__article {
+        padding-bottom: 40px;
+        position: relative;
+
+        &_image {
+            display: block;
+
+            @include abs.padding_adaptable;
+
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        &_description {
+            margin-top: 20px;
+        }
+
+        &_button {
+            margin-top: 20px;
+        }
+    }
+
+    @include abs.breakpoint(tablet) {
+
+        &__article {
+
+            &_content,
+            &_content_rev {
+                padding: 40px;
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: stretch;
+                column-gap: 40px;
+                align-items: start;
+
+                & > div {
+                    flex: 1;
+
+                    img {
+                        height: auto;
+                    }
+                }
+
+                div[class*="description"] {
+                    margin: 0;
+                }
+            }
+
+            &_image {
+                margin: 0;
+            }
+
+            &_content_rev {
+                flex-direction: row-reverse;
+                
+                div[class*="info"] {
+                    text-align: end;
+                }
+
+                div[class*="description"] {
+                    text-align: end;
+                }
+            }
+            
+        }
+    }
+
+    @include abs.breakpoint(desktop) {
+        &__articles {
+            display: flex;
+            gap: 20px;
+        }
+
+        &__article {
+            flex: 1;
+            border-radius: 10px;
+            margin: 20px 0;
+            padding-bottom: 0;
+            box-shadow: abs.$shadow-3;
+
+            &_title {
+                margin: 0;
+                border-radius: 10px 10px 0 0;
+            }
+
+            &_content,
+            &_content_rev {
+                flex-direction: column;
+                margin-top: 0px;
+                padding: 20px;
+
+                div {
+                    flex: none;
+                }
+
+                
+            }
+
+            &_content {
+                .button-up {
+                    display: none;
+                }
+            }
+
+            &_content_rev {
+                div[class*="info"],
+                div[class*="description"] {
+                    text-align: start;
+                }
+                
+                .button-up {
+                    right: 10px;
+                }
+            }
+
+            &_image1,
+            &_image2 {
+                display: block;
+                height: 300px!important;
+            }
+
+            &_info {
+                margin-top: 20px;
+            }
+        }
+    }
+
+}

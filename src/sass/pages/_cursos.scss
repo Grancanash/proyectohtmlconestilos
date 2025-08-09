@@ -1,0 +1,131 @@
+@use '../abstracts/abstracts' as abs;
+
+.courses {
+    text-align: center;
+
+    .container {
+        background-color: white;
+    }
+    
+    &__course {
+        position: relative;
+        text-align: center;
+
+        &_image {
+            display: block;
+            margin: 0;
+            @include abs.padding_adaptable;
+
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        &_block2 {
+            margin-top: 30px;
+        }
+
+        &_button {
+            margin: 20px 0 40px;
+        }
+    }
+
+    @include abs.breakpoint(tablet) {
+
+        &__course {
+
+            &_content,
+            &_content_rev {
+                display: flex;
+                align-items: fetch;
+                column-gap: 30px;
+
+                & > div {
+                    flex: 1;
+                }
+            }
+
+            &_content {
+                picture {
+                    margin-left: - abs.$padding-m;
+                }
+            }
+
+            &_content_rev {
+                flex-direction: row-reverse;
+
+                picture {
+                    margin-right: - abs.$padding-m;
+                }
+            }
+
+            &_image {
+                height: 100%;
+                margin: 0;
+
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            &_block2 {
+                margin-bottom: 30px;
+
+                .button {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &__course:nth-child(even) {
+                .button-up {
+                    right: 50%;
+                }
+        }
+    }
+
+    @include abs.breakpoint(desktop) {
+        padding-top: abs.$header-w;
+
+        &__articles {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 30px 0;
+            gap: 20px;
+        }
+
+        &__course  {
+            flex: 1;
+            border-radius: 20px;
+            box-shadow: abs.$shadow-3;
+
+            &_title {
+                margin: 0;
+                border-radius: 20px 20px 0 0;
+            }
+
+            &_content,
+            &_content_rev {
+                display: flex;
+                flex-direction: column;
+
+                picture {
+                    margin: 0;
+                }
+            }
+            
+            &_block2 {
+                padding: 20px;
+            }
+        }
+
+        &__course:nth-child(even),
+        &__course:nth-child(odd) {
+            .button-up {
+                right: 15px;
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+@use '../abstracts/abstracts' as abs;
+
+* {
+    font-family: abs.$saira-font
+}
+
+h1 ,h2 {
+    font-family: abs.$bitcount-font;
+    font-weight: 400;
+    
+}
+
+h3, h4, h5, h6, p {
+    font-family: abs.$saira-font;
+}

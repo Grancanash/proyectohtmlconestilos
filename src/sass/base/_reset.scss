@@ -1,0 +1,25 @@
+@use '../abstracts/abstracts' as abs;
+
+* {
+    padding: 0px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    background-color: abs.$gris-claro;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    color: abs.$azul-oscuro;
+}

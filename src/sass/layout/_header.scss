@@ -1,0 +1,160 @@
+@use '../abstracts/abstracts' as abs;
+
+.header {
+    box-shadow: abs.$shadow-1;
+    position: relative;
+    background-color: white;
+    height: abs.$header-w;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding-top: 20px;
+        padding-bottom: 20px;
+        position: relative;
+    }
+
+    &__logo {
+        img {
+            width: 170px;
+        }
+    }
+
+    &__icon-menu {
+        flex: 1;
+        fill: abs.$azul-oscuro;
+
+        svg {
+            display: block;
+            width: 40px;
+            margin-left: auto;
+        }
+    }
+
+    &__menu-principal {
+        width: 100vw;
+        height: 100%;
+        position: fixed;
+        z-index: 1000;
+        top: -100vh;
+        left: 0;
+        text-align: center;
+        padding-bottom: 40px;
+        background-color: rgb(#E7E8EB, .9);
+        transition: top .3s ease;
+
+        &_nav {
+            display: flex;
+            flex-direction: column;
+
+            .button_desktop {
+                display: none;
+            }
+
+            &_login > a {
+                transition: background-color .2s !important;
+                padding: 5px 20px !important;
+
+                &:hover {
+                    background-color: abs.$gris-claro !important;
+                }
+            }
+        }
+
+        &_nav a {
+            display: block;
+            padding: 10px 0;
+            color: abs.$azul-oscuro;
+            font-size: 24px;
+            text-decoration: none;
+            transition: background-color .5s;
+
+            &:hover {
+                background-color: abs.$gris;
+            }
+        }
+
+        &_close {
+            width: 40px;
+            display: block;
+            justify-content: end;
+            fill: abs.$azul-oscuro;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: 10px;
+
+            svg {
+                display: block;
+            }
+        }
+
+        &:target {
+            top: 0;
+        }
+
+    }
+
+    @include abs.breakpoint(desktop) {
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+
+        &__icon-menu {
+            display: none;
+        }
+
+        &__menu-principal {
+            position: static;
+            padding-bottom: 0;
+            background-color: transparent;
+
+            &_nav {
+                display: flex;
+                flex-direction: row;
+                justify-content: end;
+                align-items: center;
+                column-gap: 20px;
+
+                li:not(:last-child) > a {
+                    font-size: 18px;
+                    transition: none;
+
+                    &:hover {
+                        background-color: inherit;
+                        position: relative;
+
+                        &::after {
+                            position: absolute;
+                            bottom: 10px;
+                            left: 0;
+                            content: '';
+                            width: 100%;
+                            height: 1px;
+                            background-color: abs.$azul;
+                        }
+                    }
+                }
+
+                .button_mobile {
+                    display: none;
+                }
+
+                .button_desktop {
+                    display: block;
+                }
+
+                &_login > a {
+                    font-size: 18px;
+                    transition: none;
+                }
+
+            }
+
+            &_close {
+                display: none;
+            }
+        }
+    }
+}

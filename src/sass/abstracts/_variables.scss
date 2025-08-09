@@ -1,0 +1,27 @@
+$bp-tablet: 768px;
+$bp-tablet-horizontal: 1024px;
+$bp-desktop: 1200px;
+$bp-desktop-xl: 1440px;
+
+// FONTS
+$bitcount-font: 'Bitcount Prop Single';
+$saira-font: 'Saira';
+
+// COLOR
+$azul-oscuro: #191A38;
+$azul: #2E2E49;
+$gris: #BEBFC7;
+$gris-claro: #E7E8EB;
+$placeholder: color-mix(in srgb, currentColor 54%, transparent);
+
+// SHADOW
+$shadow-1: 0px 12px 14px -11px rgba(0,0,0,0.41);
+$shadow-2: 12px 12px 14px -11px rgba(0,0,0,0.41);
+$shadow-3: 0px 0px 14px -5px rgba(0,0,0,0.41);
+
+// SIZES
+$padding-p: 16px;
+$padding-m: 30px;
+$header-w: 112px;
+$footer-h: 150px;
+

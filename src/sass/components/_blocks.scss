@@ -1,0 +1,9 @@
+@use '../abstracts/abstracts' as abs;
+
+.highlightedblock_primary {
+    @include abs.highlightedblock_primary;
+}
+
+.highlightedblock_secondary {
+    @include abs.highlightedblock_secondary;
+}

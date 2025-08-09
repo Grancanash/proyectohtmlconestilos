@@ -1,0 +1,135 @@
+@use '../abstracts/abstracts' as abs;
+
+.blog {
+    text-align: center;
+
+    .container {
+        background-color: white;
+    }
+    
+    &__post {
+        position: relative;
+
+        &_image {
+            display: block;
+            margin: 0;
+            @include abs.padding_adaptable;
+
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        &_subtitle {
+            margin-top: 20px;
+        }
+
+        &_button {
+            margin: 20px 0 40px;
+        }
+
+        &_block3 {
+            margin-top: 15px;
+        }
+
+        h4 {
+            font-family: abs.$bitcount-font;
+            font-weight: 400;
+            font-size: 24px;
+        }
+    }
+
+    @include abs.breakpoint(tablet) {
+        &__post {
+            
+            &_content,
+            &_content_rev {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 30px;
+                padding-top: 30px;
+
+                & > div {
+                    flex: calc(50% - (30px / 2));
+                }
+            }
+
+            &_image {
+                margin: 0;
+            }
+
+            &_content_rev {
+                flex-direction: row-reverse;
+            }
+
+            &_block2 {
+                .button {
+                    margin-bottom: 0;
+                }
+            }
+
+            &_block3 {
+                width: 100%;
+                margin-top: 0;
+            }
+
+            h4 {
+                font-size: 26px;
+            }
+        }
+    }
+
+    @include abs.breakpoint(desktop) {
+        padding-top: abs.$header-w;
+
+        & .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding-bottom: 30px;
+        }
+
+        &__title {
+            width: calc(100% + (abs.$padding-m * 2));
+        }
+
+        &__post {
+            width: calc(50% - 20px);
+            text-align: left;
+            box-shadow: abs.$shadow-3;
+            border-radius: 20px;
+
+            &_title {
+                margin: 0;
+                border-radius: 20px 20px 0 0 ;
+            }
+
+            &_subtitle {
+                margin: 0;
+            }
+
+            &_content,
+            &_content_rev {
+                flex-direction: column;
+                padding: 0;
+                gap: 20px;
+            }
+
+            &_block1 {
+                width: 100%;
+            }
+
+            &_block2,
+            &_block3 {
+                padding: 0 30px;
+            }
+
+            .button-up {
+                right: 15px;
+            }
+        }
+    }
+}

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto HTML con estilos - Academia de nuevas tecnologías</title>
+</head>
+
+<body>
+
+    <!-- CABECERA -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="header__logo">
+                <picture>
+                    <img src="src/img/common/logo-conquer.jpg" alt="Logo ConquerBlocks">
+                </picture>
+            </a>
+            <nav class="header__menu-principal" id="menu-principal">
+                <a href="#" class="header__menu-principal_close">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                    </svg>
+                </a>
+                <ul class="header__menu-principal_nav">
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                    <li><a href="cursos.html">Cursos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="registro.html">Registro</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li class="header__menu-principal_nav_login"><a href="login.html" class="button_mobile">Login</a><a href="login.html" class="button button_desktop">Login</a></li>
+                </ul>
+            </nav>
+            <a class="header__icon-menu" href="#menu-principal">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact">
+            <div class="container">
+                <div class="highlightedblock_primary">
+                    <h1>Contacta con nosotros</h1>
+                </div>
+                <div class="contact__map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12375.209557167198!2d-75.525457!3d39.156476!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c764aa67a43739%3A0x81a0987dbc013dbf!2s8%20The%20Green%20Ste%20R%2C%20Dover%2C%20DE%2019901%2C%20EE.%20UU.!5e0!3m2!1ses!2ses!4v1754735396835!5m2!1ses!2ses" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="contact__addresses">
+                    <div class="contact__addresses_address">
+                        <h4>ConquerX LLC</h4>
+                        <p>Dirección: 8 THE GREEN STE R, Dover, 19901, Delaware, USA</p>
+                    </div>
+                    <div class="contact__addresses_address">
+                        <h4>ABERFURA EDUCACION Y EXCELENCIA SL.</h4>
+                        <p>Dirección: CL ROMA, 28028, MADRID, Madrid, ES</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__info">© ConquerBlocks 2025 - <a href="aviso-legal.html">Aviso Legal</a></p>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

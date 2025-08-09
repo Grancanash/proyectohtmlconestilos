@@ -1,0 +1,18 @@
+@use '../abstracts/abstracts' as abs;
+
+.footer {
+    height: abs.$footer-h;
+    background-color: #1f1f1f;
+    color: white;
+
+    .container {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    a {
+        color: white;
+    }
+}
