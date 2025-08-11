@@ -1,7 +1,7 @@
 @use '../abstracts/abstracts' as abs;
 
 .login {
-    height: calc(100vh - abs.$header-w - abs.$footer-h);
+    // height: calc(100vh - abs.$header-w - abs.$footer-h);
 
     .container {
         background-color: white;
@@ -15,9 +15,7 @@
     &__form {
         display: flex;
         align-items: center;
-        margin-top: 100px;
-        // height: calc(100% - 200px);
-        // height: calc(100vh - abs.$header-w - abs.$footer-h - 200px);
+        padding: 100px 0;
 
         form  {
             margin: 0 auto;
