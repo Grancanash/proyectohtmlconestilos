@@ -6,6 +6,12 @@
     .container {
         background-color: white;
     }
+
+    &__title {
+        &_description {
+            margin-top: 10px;
+        }
+    }
     
     &__course {
         position: relative;

@@ -15,7 +15,9 @@
     &__form {
         display: flex;
         align-items: center;
-        height: calc(100% - 200px);
+        // height: calc(100% - 200px);
+        height: calc(100vh - abs.$header-w - abs.$footer-h - 200px);
+        border: solid red;
 
         form  {
             margin: 0 auto;

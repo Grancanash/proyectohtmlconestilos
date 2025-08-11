@@ -76,24 +76,29 @@
     &__article {
         position: relative;
         padding-bottom: 40px;
+        text-align: center;
 
         &_image1, 
         &_image2 {
             height: 200px;
             background-position: center;
             background-size: cover;
-            background-attachment: fixed;
             box-shadow: inset 0px 0px 20px -10px rgba(0,0,0,1);
-
             @include abs.padding_adaptable;
         }
 
         &_image1 {
-            background-image: url('../../img/cursos/fullstack_mobile.jpg');
+            background-image: image-set(
+                url("../../img/cursos/fullstack_mobilex1.jpg") 1x,
+                url("../../img/cursos/fullstack_mobilex2.jpg") 2x
+            );
         }
 
         &_image2 {
-            background-image: url('../../img/cursos/blockchain_mobile.jpg');
+            background-image: image-set(
+                url("../../img/cursos/blockchain_mobilex1.jpg") 1x,
+                url("../../img/cursos/blockchain_mobilex2.jpg") 2x
+            );
         }
 
         &_description {
@@ -107,6 +112,8 @@
 
     @include abs.breakpoint(tablet) {
         &__article {
+            
+            text-align: inherit;
 
             &_image1 {
                 background-image: url('../../img/cursos/fullstack.jpg');
@@ -214,6 +221,7 @@
     &__article {
         padding-bottom: 40px;
         position: relative;
+        text-align: center;
 
         &_image {
             display: block;
@@ -238,6 +246,7 @@
     @include abs.breakpoint(tablet) {
 
         &__article {
+            text-align: inherit;
 
             &_content,
             &_content_rev {
